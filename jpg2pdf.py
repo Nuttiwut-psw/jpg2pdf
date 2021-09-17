@@ -16,17 +16,9 @@ savedir = filedialog.askdirectory(initialdir=dirto, title='select save location'
 pdf_path = savedir+"/"+name+".pdf"
 print("save pdf at ----> "+pdf_path)
 pdf_bytes = img2pdf.convert(image.filename)
-
-# opening or creating pdf file
 file = open(pdf_path, "wb")
-
-# writing pdf files with chunks
 file.write(pdf_bytes)
-
-# closing image file
 image.close()
-
-# closing pdf file
 file.close()
 
 # output
